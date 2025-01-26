@@ -45,11 +45,10 @@ export default function RelatedWorks({ movieId }: fetchRelatedWorksProps) {
                 handleModalOpen(poster.id);
               }}
             >
-              <div className="relative mb-4 cursor-pointer">
+              <div className="relative mb-4 h-[10.2vw] w-[7vw] cursor-pointer">
                 <Image
                   src={`${BASE_IMAGE_URL}${poster.poster_path}`}
-                  width={121.34}
-                  height={168.95}
+                  layout="fill"
                   alt="세로 포스터"
                   className="rounded-2xl"
                 />

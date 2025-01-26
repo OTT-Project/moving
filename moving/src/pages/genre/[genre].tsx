@@ -12,10 +12,11 @@ import { useModal } from '@/lib/hook/useModal';
 import ModalFrame from '@/components/modal/ModalFrame';
 import DetailModal from '@/components/detail/DetailModal';
 
+const DEFAULT_IMAGE = '/images/defaultPoster.png';
+
 export default function genre() {
   const router = useRouter();
   const { genre } = router.query;
-
   const { genres, fetchGenres } = useGenreStore(); // 스토어에서 genres와 fetchGenres 사용
   const [genreId, setGenreId] = useState<string | null>(null);
   const { isOpenModal, isOpacity, handleModalOpen, handleModalClose } =
@@ -74,27 +75,33 @@ export default function genre() {
           <hr className="mb-9 border-[1px] text-[#f3f3f3]" />
           <ul className="flex flex-wrap gap-[1.4vw]">
             {data?.pages.map((page) =>
-              page?.results.map((poster) => (
-                <li key={poster.id}>
-                  <div
-                    className="h-[230px] w-[22vw] truncate md:h-[23vw] md:w-[11vw] xl:h-[18vw] xl:w-[7.9vw]"
-                    onClick={() => {
-                      handleModalOpen(poster.id);
-                    }}
-                  >
-                    <div className="relative mb-4 cursor-pointer">
-                      <Image
-                        src={`${BASE_IMAGE_URL}${poster.poster_path}`}
-                        width={121.34}
-                        height={168.95}
-                        alt="세로 포스터"
-                        className="rounded-2xl"
-                      />
+              page?.results.map((poster) => {
+                const posterPath = poster.poster_path
+                  ? `${BASE_IMAGE_URL}${poster.poster_path}`
+                  : DEFAULT_IMAGE;
+                return (
+                  <li key={poster.id}>
+                    <div
+                      className="h-[230px] w-[22vw] truncate md:h-[23vw] md:w-[11vw] xl:h-[18vw] xl:w-[7.9vw]"
+                      onClick={() => {
+                        handleModalOpen(poster.id);
+                      }}
+                    >
+                      <div className="relative mb-4 h-[10.2vw] w-[7vw] cursor-pointer">
+                        <Image
+                          src={posterPath}
+                          layout="fill"
+                          alt="세로 포스터"
+                          className="rounded-2xl"
+                          placeholder="blur"
+                          blurDataURL={posterPath}
+                        />
+                      </div>
+                      <span>{poster.title}</span>
                     </div>
-                    <span>{poster.title}</span>
-                  </div>
-                </li>
-              ))
+                  </li>
+                );
+              })
             )}
           </ul>
         </section>
