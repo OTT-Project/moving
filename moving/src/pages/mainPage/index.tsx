@@ -1,66 +1,14 @@
-import WeeksTrend from '@/components/mainPage/weeksTrend';
-import GameMovie from '@/components/mainPage/gameMovie';
-import BeforeOpening from '@/components/mainPage/ComingSoonMovies';
-import PopularMovies from '@/components/mainPage/popularMovies';
-import Series from '@/components/mainPage/series';
-import Membership from '@/components/mainPage/membership';
-import TodayContent from '@/components/mainPage/todaycontent';
 import LogoGray from '@/images/LogoGray.svg';
 import YoutubeIcon from '@/icons/youtubeIcon.svg';
 import XIcon from '@/icons/x(sns)Icon.svg';
 import TiktokIcon from '@/icons/tiktokIcon.svg';
 import InstarIcon from '@/icons/instagramIcon.svg';
-import MainBanner from '@/components/mainPage/MainBanner';
-import { useModal } from '@/lib/hook/useModal';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import ModalFrame from '@/components/modal/ModalFrame';
-import DetailModal from '@/components/detail/DetailModal';
+import MoviesSection from '@/components/mainPage/MoviesSection';
 
 export default function mainPage() {
-  const { isOpenModal, isOpacity, handleModalOpen, handleModalClose } =
-    useModal();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router.query.movieNumber) {
-      const movieNumber = Number(router.query.movieNumber);
-      handleModalOpen(movieNumber);
-    }
-  }, []);
   return (
     <>
-      <main>
-        <ModalFrame
-          isOpenModal={isOpenModal}
-          isOpacity={isOpacity}
-          handleModalClose={handleModalClose}
-        >
-          {isOpenModal && (
-            <DetailModal
-              isOpacity={isOpacity}
-              handleModalClose={handleModalClose}
-            />
-          )}
-        </ModalFrame>
-
-        <MainBanner handleModalOpen={handleModalOpen} />
-
-        <WeeksTrend handleModalOpen={handleModalOpen} />
-
-        <GameMovie handleModalOpen={handleModalOpen} />
-
-        <BeforeOpening handleModalOpen={handleModalOpen} />
-
-        <Series handleModalOpen={handleModalOpen} />
-
-        <PopularMovies handleModalOpen={handleModalOpen} />
-
-        <Membership />
-
-        <TodayContent handleModalOpen={handleModalOpen} />
-      </main>
-
+      <MoviesSection />
       <footer className="mt-[108px] opacity-60">
         <hr className="border-[#1E1E1E]" />
         <div className="mx-[25px] my-5 gap-4 text-sm text-[#dfdfdf] md:flex xl:mx-[160px] xl:text-base  ">

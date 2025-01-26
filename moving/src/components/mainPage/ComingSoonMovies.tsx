@@ -37,6 +37,7 @@ export default function BeforeOpening({ handleModalOpen }: BeforeOpeningProps) {
               <Image
                 src={`${BASE_IMAGE_URL}${poster.poster_path}`}
                 layout="fill"
+                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 23vw, 10.53vw"
                 alt="세로 포스터"
                 className="rounded-2xl blur-[1px] "
               />

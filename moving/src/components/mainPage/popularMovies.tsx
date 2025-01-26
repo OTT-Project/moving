@@ -56,6 +56,7 @@ export default function PopularMovies({ handleModalOpen }: PopularMoviesProps) {
               <Image
                 src={`${BASE_IMAGE_URL}${poster.backdrop_path}`}
                 layout="fill" // 부모의 크기에 맞춤
+                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 23vw, 10.53vw"
                 objectFit="cover" // 부모 크기에 맞게 자름
                 alt="세로 포스터"
                 className="rounded-2xl"

@@ -1,18 +1,41 @@
 import Image from 'next/image';
 import StarIcon from '@/icons/starIcon.svg';
-import { useWeekTrend } from '@/hook/mainpage/useWeekTrend';
+
 import dayjs from 'dayjs';
 import { useEffect } from 'react';
 import { useGenreStore } from '../../../store/useGenreStore';
 import { BASE_IMAGE_URL } from '@/api/mainpageAPI';
 import { motion } from 'framer-motion';
-interface WeeksTrendProps {
-  handleModalOpen?: (id: number) => void;
+
+interface Poster {
+  id: number;
+  poster_path: string;
+  title: string;
+  vote_average: number;
+  release_date: string;
+  genre_ids: number[];
 }
 
-export default function WeeksTrend({ handleModalOpen }: WeeksTrendProps) {
+interface Data {
+  results: Poster[];
+}
+
+interface SectionCardListProps {
+  handleModalOpen?: (id: number) => void;
+  data?: Data;
+  isLoading: boolean;
+  isError: boolean;
+  content: string;
+}
+
+export default function SectionCardList({
+  handleModalOpen,
+  data,
+  isLoading,
+  isError,
+  content,
+}: SectionCardListProps) {
   const { genres, fetchGenres } = useGenreStore();
-  const { data, isLoading, isError } = useWeekTrend();
 
   useEffect(() => {
     if (Object.keys(genres).length === 0) {
@@ -37,7 +60,7 @@ export default function WeeksTrend({ handleModalOpen }: WeeksTrendProps) {
 
   return (
     <section className="ml-[8.5vw] mt-[96px] flex flex-col md:mr-0 xl:mr-[8.5vw] ">
-      <h2 className="mb-7 text-2xl font-bold">🔥이번주 트렌드</h2>
+      <h2 className="mb-7 text-2xl font-bold">{content}</h2>
       <ul className="scrollbar-hide flex gap-[2.8vw] overflow-y-hidden overflow-x-scroll">
         {limitedData?.map((poster) => (
           <motion.li
@@ -52,6 +75,7 @@ export default function WeeksTrend({ handleModalOpen }: WeeksTrendProps) {
               <Image
                 src={`${BASE_IMAGE_URL}${poster.poster_path}`}
                 layout="fill"
+                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 23vw, 10.53vw"
                 alt="세로 포스터"
                 className="max-h-[290px] rounded-2xl object-cover"
               />

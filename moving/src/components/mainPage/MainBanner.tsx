@@ -100,13 +100,14 @@ export default function MainBanner({ handleModalOpen }: MainBannerProps) {
               src={`https://www.youtube.com/embed/${videoData?.results[0].key}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0`}
               title={videoData?.results[0]?.name}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy"
             />
           ) : (
             <Image
               src={`${BASE_IMAGE_URL}${currentGroup[currentMovieIndex].backdrop_path}`}
-              layout="responsive"
-              width={1920}
-              height={708}
+              width={1730}
+              height={707}
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 30vw"
               alt="메인 베너"
             />
           )}
@@ -139,7 +140,9 @@ export default function MainBanner({ handleModalOpen }: MainBannerProps) {
                 <Image
                   key={poster.id}
                   src={`${BASE_IMAGE_URL}${poster.backdrop_path}`}
+                  priority
                   layout="fill"
+                  sizes="(max-width: 768px) 80vw, (max-width: 1200px) 30vw, 20vw"
                   alt="가로 이미지"
                   className={clsx(
                     'h-auto max-w-[358px] cursor-pointer rounded-2xl p-[0.4px]',

@@ -8,6 +8,7 @@ export default function Membership() {
           <Image
             src={'/images/membershipBackgroundImage.png'}
             fill
+            sizes="(max-width: 768px) 30vw, (max-width: 1200px) 23vw, 10.53vw"
             alt="로고"
           />
         </div>
