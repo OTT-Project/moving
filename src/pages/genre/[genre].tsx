@@ -11,8 +11,7 @@ import clsx from 'clsx';
 import { useModal } from '@/lib/hook/useModal';
 import ModalFrame from '@/components/modal/ModalFrame';
 import DetailModal from '@/components/detail/DetailModal';
-
-const DEFAULT_IMAGE = '/images/defaultPoster.png';
+import DEFAULT_IMAGE from '@/images/defaultPoster.png';
 
 export default function genre() {
   const router = useRouter();
@@ -23,9 +22,8 @@ export default function genre() {
     useModal(); // 모달 연동
 
   useEffect(() => {
-    // 장르 데이터를 가져오는 비동기 작업
     const fetchData = async () => {
-      await fetchGenres(); // 스토어의 fetchGenres 호출
+      await fetchGenres();
     };
 
     if (genre && genres) {
@@ -43,7 +41,7 @@ export default function genre() {
 
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useGenreMovies({
-      genre: genreId || '', // genreId를 사용 (없으면 빈 값)
+      genre: genreId || '',
       year: currentYear,
     });
 
@@ -73,7 +71,8 @@ export default function genre() {
         <h1 className="my-14 text-[40px] font-bold text-white">'{genre}'</h1>
         <section className="mb-16">
           <hr className="mb-9 border-[1px] text-[#f3f3f3]" />
-          <ul className="flex flex-wrap gap-[1.4vw]">
+
+          <ul className="grid grid-cols-3 gap-[1.4vw] md:grid-cols-5 xl:grid-cols-8">
             {data?.pages.map((page) =>
               page?.results.map((poster) => {
                 const posterPath = poster.poster_path
@@ -82,19 +81,21 @@ export default function genre() {
                 return (
                   <li key={poster.id}>
                     <div
-                      className="h-[230px] w-[22vw] truncate md:h-[23vw] md:w-[11vw] xl:h-[18vw] xl:w-[7.9vw]"
+                      className="flex h-[30vw] w-[22vw] flex-col justify-between truncate md:h-[21vw] md:w-[13.4vw] xl:h-[12vw] xl:w-[7.9vw]"
                       onClick={() => {
                         handleModalOpen(poster.id);
                       }}
                     >
-                      <div className="relative mb-4 h-[10.2vw] w-[7vw] cursor-pointer">
+                      <div className="relative mb-1 h-[30vw] w-full cursor-pointer md:h-[18.2vw] xl:h-[10.2vw]">
                         <Image
                           src={posterPath}
                           layout="fill"
+                          sizes="(max-width: 768px) 30vw, (max-width: 1200px) 18vw, 12vw"
                           alt="세로 포스터"
                           className="rounded-2xl"
                           placeholder="blur"
-                          blurDataURL={posterPath}
+                          blurDataURL={'/images/defaultPoster.png'}
+                          loading="lazy"
                         />
                       </div>
                       <span>{poster.title}</span>

@@ -51,7 +51,9 @@ export default function SectionCardList({
   const limitedData = data?.results.slice(0, 6);
 
   if (isLoading) {
-    return;
+    return (
+      <div className="bg-gray-800 h-[55vh] min-h-[300px] animate-pulse md:h-[50vh] xl:h-[45vh]" />
+    );
   }
 
   if (isError) {

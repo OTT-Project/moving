@@ -36,21 +36,24 @@ export default function RelatedWorks({ movieId }: fetchRelatedWorksProps) {
         </span>
       </h2>
       <hr className="mb-9 border-[1px] text-[#f3f3f3]" />
-      <ul className="flex flex-wrap gap-[1.4vw]">
+      <ul className="grid grid-cols-3 gap-[1.4vw] md:grid-cols-5 xl:grid-cols-8">
         {limitedData?.map((poster) => (
           <li key={poster.id}>
             <div
-              className="h-[230px] w-[22vw] truncate md:h-[23vw] md:w-[11vw] xl:h-[18vw] xl:w-[7.9vw]"
+              className="flex h-[30vw] w-[22vw] flex-col justify-between truncate md:h-[21vw] md:w-[13.4vw] xl:h-[12vw] xl:w-[7.9vw]"
               onClick={() => {
                 handleModalOpen(poster.id);
               }}
             >
-              <div className="relative mb-4 h-[10.2vw] w-[7vw] cursor-pointer">
+              <div className="relative mb-1 h-[30vw] w-full cursor-pointer md:h-[18.2vw] xl:h-[10.2vw]">
                 <Image
                   src={`${BASE_IMAGE_URL}${poster.poster_path}`}
                   layout="fill"
+                  sizes="(max-width: 768px) 30vw, (max-width: 1200px) 18vw, 12vw"
                   alt="세로 포스터"
                   className="rounded-2xl"
+                  placeholder="blur"
+                  blurDataURL={'/images/defaultPoster.png'}
                 />
               </div>
               <span>{poster.title}</span>

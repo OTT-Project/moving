@@ -6,6 +6,8 @@ import { usePopularMovie } from '@/hook/mainpage/usePopularMovie';
 import { BASE_IMAGE_URL } from '@/api/mainpageAPI';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import DefaultRowPoster from '@/images/defaultRowPoster.png';
+
 interface PopularMoviesProps {
   handleModalOpen?: (id: number) => void;
 }
@@ -54,11 +56,16 @@ export default function PopularMovies({ handleModalOpen }: PopularMoviesProps) {
               className="relative h-[24vw] w-[36vw] shrink-0 cursor-pointer  md:h-[20vw] md:w-[30vw] xl:h-[10.4vw] xl:w-[18.7vw] "
             >
               <Image
-                src={`${BASE_IMAGE_URL}${poster.backdrop_path}`}
+                src={
+                  poster.poster_path
+                    ? `${BASE_IMAGE_URL}${poster.backdrop_path}`
+                    : DefaultRowPoster
+                }
+                // src={`${BASE_IMAGE_URL}${poster.backdrop_path}`}
                 layout="fill" // 부모의 크기에 맞춤
                 sizes="(max-width: 768px) 30vw, (max-width: 1200px) 23vw, 10.53vw"
                 objectFit="cover" // 부모 크기에 맞게 자름
-                alt="세로 포스터"
+                alt="가로 포스터"
                 className="rounded-2xl"
               />
               <div className="absolute inset-0 rounded-2xl bg-black opacity-50" />

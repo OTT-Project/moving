@@ -41,7 +41,7 @@ export default function Navbar() {
   const handleSearch = () => {
     const query = inputRef.current?.value.trim();
     if (!query) {
-      router.push('/mainPage');
+      router.push('/');
     } else {
       router.push(`/search/${query}`);
     }
@@ -75,7 +75,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleDropdown}
-            className=" relative mr-10 flex items-center"
+            className=" relative mr-3 flex items-center md:mr-10"
           >
             <span className=" mr-4 text-nowrap text-white">장르</span>
             <DropdownIcon />
@@ -103,7 +103,7 @@ export default function Navbar() {
               </ul>
             </div>
           </button>
-          <div className="flex h-6 w-52 items-center justify-between rounded-lg bg-[#404040] px-4 opacity-50 md:w-64 xl:h-9 xl:w-[360px]">
+          <div className="flex h-6 w-40 items-center justify-between rounded-lg bg-[#404040] px-4 opacity-50 md:w-64 xl:h-9 xl:w-[360px]">
             <input
               ref={inputRef}
               type="text"
@@ -111,7 +111,7 @@ export default function Navbar() {
               className="mb-[3px] w-full bg-transparent  placeholder:text-xs focus:outline-none"
               onKeyDown={handleKeyDown}
             />
-            <span className="relative cursor-pointer">
+            <span className="relative hidden cursor-pointer md:block">
               <SearchICon onClick={handleSearch} />
             </span>
           </div>

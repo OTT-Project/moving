@@ -5,7 +5,7 @@ import TiktokIcon from '@/icons/tiktokIcon.svg';
 import InstarIcon from '@/icons/instagramIcon.svg';
 import MoviesSection from '@/components/mainPage/MoviesSection';
 
-export default function mainPage() {
+export default function Home() {
   return (
     <>
       <MoviesSection />

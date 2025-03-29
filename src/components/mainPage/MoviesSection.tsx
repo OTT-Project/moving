@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 import ModalFrame from '@/components/modal/ModalFrame';
 import DetailModal from '@/components/detail/DetailModal';
 import { useWeekTrend } from '@/hook/mainpage/useWeekTrend';
-import SectionCardList from '@/components/mainPage/SectionCardList ';
+import SectionCardList from '@/components/mainPage/SectionCardList';
 import { useGameMovie } from '@/hook/mainpage/useGameMovie';
 import { useSeriesMovie } from '@/hook/mainpage/useSeriesMovie';
 import { useTodayMovie } from '@/hook/mainpage/useTodayMovie';

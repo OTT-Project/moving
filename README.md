@@ -1,83 +1,114 @@
-## 💌 MOVING 24.11.18 ~ 24.12.10
-![1](https://github.com/user-attachments/assets/0efc078d-9ac2-403e-9d17-f92372916268)
-![6](https://github.com/user-attachments/assets/5b290893-8a0f-4b45-b669-efeca481794c)
+<br><br>
 
-영화를 보는 동안 즐거움이 가득한 'MOVING'
+<div align = center>
 
-## 🙍‍♂️ 팀원 소개
-|이름|상세 내용|
-|------|---|
-|장용한|기획, 메인 페이지, 장르별 카테고리 페이지, 검색 페이지 구현|
-|염정훈|기획, 상세 모달 페이지, 동영상 재생페이지|
-|최원혁|기획, 웹디자인 및 와이어프레임, 랜더 페이지|
+![무빙로고 2](https://github.com/user-attachments/assets/10da6499-5b47-4f89-8e50-dd46226fa759)
 
-## 📌 프로젝트 소개
-최신 스트리밍 서비스의 트렌드를 반영하여, 사용자에게 더 나은 경험을 제공하기 위해 설계된 TypeScript 기반의 웹 애플리케이션입니다. 이 프로젝트는 사용자 중심의 직관적인 UI/UX 디자인과 최신 기술을 결합하여, 다양한 콘텐츠를 보다 쉽게 탐색하고 즐길 수 있도록 합니다.
-
-## 📃 상세 계획
-[노션 상세 계획 링크](https://www.notion.so/12e2e48b770d805cb0d3ddb022f87f83)
-
-## 📄 배포 사이트
-[배포 사이트 링크](https://ott-moving.vercel.app/)
-
-## 📚 기술 스택
-<div>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/>
-<img src="https://img.shields.io/badge/REACT-61DAFB?style=flat-square&logo=React&logoColor=black"/>
-<img src="https://img.shields.io/badge/NEXT.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
-<img src="https://img.shields.io/badge/Tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
-<img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white"/>
-<img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=black"/>
-<img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=black"/>
-<img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=black"/>  
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javaScript&logoColor=black"/>    
 </div>
 
-## 📁 프로젝트 구조
-```
-├─ 📂.github
-│  └─ 📂ISSUE_TEMPLATE
-│     ├─ Issue_Templage
-│     └─ pull_request_template.md
-├─ .gitignore
-├─ README.md
-├─ next.config.mjs
-├─ package-lock.json
-├─ package.json
-├─ postcss.config.mjs
-├─ public
-│  └─ 
-│     └─ 📂icons
-│     └─ 📂images
-└─ 📂src
-├─ 📂apis
-├─ 📂components
-├─ 📂lib
-└─ 📂apis
-└─ 📂store
-└─ 📂fonts
-└─ 📂hook
-└─ 📂utils
-├─ 📂pages
-├─ 📂style
-├─ 📂types
-```
+<br><br>
 
-## 🎞 구현 GIF
-![메인페이지1](https://github.com/user-attachments/assets/b041f198-86cd-470f-8e6a-312c9c768ef4)
-![장르페이지](https://github.com/user-attachments/assets/62fb12c6-977e-472f-959d-d4eeb4bde8a5)
-![검색페이지](https://github.com/user-attachments/assets/6c73c826-401e-4991-9c4c-607a26805485)
+**최신 영화 예고편과 관련 정보를 볼수 있는 OTT플랫폼** <br>
+TMDB API를 이용한 OTT서비스로 카테고리별 영화 추천과 검색이 가능합니다.
+<br>
+영화별 연관된 추천 영화, 출연진, 스토리 등 간단한 영화 정보를 조회 하실수 있습니다.
 
+---
 
+> <p>사이드 프로젝트 <br> 2024.11.18 ∼ 2024.12.10</p>
 
-## 😀 장용한
-- ott 사이트에 관심이 많이 있었는데 직접 구현해보고 어떤 식으로 페이지가 동작하는지 학습할수 있어서 좋았습니다
-- 메인 페이지와 장르/검색 페이지를 만들면서 많은 데이터를 불러올때 성능을 생각하며 구현하다보니 image컴포넌트의 여러 옵션들이나 데이터를 가져오는 방식에 대해 깊게 공부할수 있어서 좋았습니다
+<div align="right">
+<h3>배포 사이트</h3>
+https://moving-project-ott.vercel.app/🔗
+</div>
 
-## 🤔 염정훈
-- 한번쯤 꼭 만들어 보고 싶었던 프로젝트를 원하는 기능과 함꼐 직접 구현해 볼 수 있게 되어서 정말 좋았습니다.
-- 기존에는 페이지 네이션이나 정렬 기능이 완성되어 있고 params만 수정하면 되었지만 이번에는 직접 구현해 볼 수 있는 경험을 해서 좋았습니다.
+<br>
+<br>
 
-## 😄 최원혁
-- 팀프로젝트를 할때 경험하지 못했던 기획단계와 디자인까지 무빙 프로젝트를 하게 되면서 경험해 볼 수 있어서 좋았습니다
-- 학원측에서 제공해주는 API가 아닌 직접 다른 사이트의 API를 가져와 작업하게 되어 데이터와 API에 대해서 좀 더 이해할 수 있었습니다.
+## 📚 기술 스택
+
+<div>
+
+![html5](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=black)
+![css3](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=black)
+![next](https://img.shields.io/badge/Next.js-ffffff?style=for-the-badge&logo=next.js&logoColor=black)
+![ts](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javaScript&logoColor=black)
+![framer](https://img.shields.io/badge/Framer-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![zustand](https://img.shields.io/badge/zustand-20232A?style=for-the-badge&logo=zustand&logoColor=white)
+![tanstackquery](https://img.shields.io/badge/tanstackquery-20232A?style=for-the-badge&logo=tanstackquery&logoColor=white)
+![tailwindCss](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![figma](https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=black)
+
+</div>
+
+<br><br>
+
+## 📌 프로젝트 소개
+
+<img width="451" alt="image" src="https://github.com/user-attachments/assets/b5c7bee4-82fd-41a4-a525-b1f4e4069b10" />
+
+<p>
+MOVING에서 추천하는 영화 목록을 확인할수 있습니다.
+<br>
+<br>
+TMDB 오픈 API를 통해 영화의 각종 정보와 유튜브 key를 통해 예고편을 불러와 메인 베너에서 확인할 수 있습니다.
+axios와 React Query를 통한 데이터 패칭과, pramer motion을 통한 애니메이션 효과로 부드러운 사용성, next/Image컴포넌트를 통한 이미지 최적화 작업을 중심으로 구현하였습니다.
+</P>
+
+<br><br>
+
+## 📌 트러블 슈팅
+
+[문제]
+<br>
+
+- 이미지 처리 부분에서 비효율성과 과도한 리랜더링으로 인해 페이지 성능 저하
+
+[원인]
+
+- 반응형을 위해 image속성에 fill을 적용 하였지만 사이즈 지정이
+  되어있지 않아서 최적화된 이미지 용량으로 가져오지 못함
+- 비동기적으로 동영상과 이미지를 가져오면서 로딩중 해당 영역이
+  없어지며 CLS문제가 발생함
+- 모든 이미지를 한번에 불러와 성능 부담 증가
+
+[해결]
+
+- fill 속성과 size속성을 추가하여 이미지 용량을 최적화해 1/10로
+  이미지 용량 감소
+
+  > 이미지 원본 사이즈로 데이터 로딩
+  > ![alt text](image-1.png)
+  > size속성 적용 후
+  > ![alt text](image-2.png)
+
+- 로딩시 스켈레톤 UI 적용으로 대규모 레이아웃 이동을 방지하고
+  CLS를 개선하여 더 부드러운 인터랙션을 제공.
+  ![alt text](image-4.png)
+- lazyLoading을 적용해 메모리 사용 최적화와 초기 로딩 속도를
+  개선(스크롤시 데이터 추가로 불러옴)
+  ![alt text](image-3.png)
+
+<br><br><br>
+
+## 📈 성능 개선
+
+> 개선전 <br>![alt text](image-5.png)
+
+> 개선후 <br> ![alt text](image-6.png)
+
+- LCP가 65.2% 개선
+- TBT가 50% 감소
+- CLS가 69.2% 개선
+- Speed Index 20% 향상
+
+<br>
+
+## 🙍‍♂️ 팀원 소개
+
+| 이름   | 상세 내용                                                   |
+| ------ | ----------------------------------------------------------- |
+| 장용한 | 기획, 메인 페이지, 장르별 카테고리 페이지, 검색 페이지 구현 |
+| 염정훈 | 기획, 상세 모달 페이지, 동영상 재생페이지                   |
+| 최원혁 | 기획, 웹디자인 및 와이어프레임, 랜더 페이지                 |

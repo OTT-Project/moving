@@ -57,7 +57,9 @@ export default function MainBanner({ handleModalOpen }: MainBannerProps) {
   );
 
   if (isLoading) {
-    return;
+    return (
+      <div className="bg-gray-800 h-[430px] animate-pulse md:h-[600px] xl:h-[708px]" />
+    );
   }
 
   if (isError) {
@@ -97,10 +99,9 @@ export default function MainBanner({ handleModalOpen }: MainBannerProps) {
             <iframe
               width={3320}
               height={1538}
-              src={`https://www.youtube.com/embed/${videoData?.results[0].key}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0`}
+              src={`https://www.youtube.com/embed/${videoData?.results[0].key}?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0`}
               title={videoData?.results[0]?.name}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              loading="lazy"
             />
           ) : (
             <Image
